@@ -1,0 +1,188 @@
+/* Simple, clean styling for the whole app */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f2f2f7;
+}
+
+/* ---------- Auth pages (Login / Register) ---------- */
+.auth-container {
+  max-width: 350px;
+  margin: 100px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.auth-container button {
+  padding: 10px;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.auth-container button:hover {
+  background-color: #3955d0;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+}
+
+.success-text {
+  color: green;
+  font-size: 13px;
+}
+
+/* ---------- Dashboard page ---------- */
+.dashboard-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-room-form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.create-room-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.room-list {
+  list-style: none;
+  padding: 0;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------- Chat Room page ---------- */
+.chatroom-container {
+  display: flex;
+  height: 100vh;
+}
+
+.chatroom-sidebar {
+  width: 220px;
+  background: #2c2f48;
+  color: white;
+  padding: 20px;
+}
+
+.chatroom-sidebar button {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.chatroom-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chatroom-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.messages-list {
+  flex: 1;
+  overflow-y: auto;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.message {
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  max-width: 70%;
+}
+
+.own-message {
+  background-color: #d6e4ff;
+  margin-left: auto;
+  text-align: right;
+}
+
+.other-message {
+  background-color: #f0f0f0;
+}
+
+.system-message {
+  background-color: transparent;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  max-width: 100%;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+}
+
+.message-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.message-form button {
+  padding: 10px 20px;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
