@@ -1,8 +1,5 @@
--- Run this file in MySQL to create the database and tables
--- You can run it like: mysql -u root -p < schema.sql
-
-CREATE DATABASE IF NOT EXISTS chat_app;
-USE chat_app;
+-- Run this file against the target MySQL database (e.g. Aiven's defaultdb) to create the tables.
+-- Example: mysql --host=... --port=... --user=avnadmin -p --ssl-ca=ca.pem defaultdb < schema.sql
 
 -- Table to store registered users
 CREATE TABLE IF NOT EXISTS users (
