@@ -1,12 +1,45 @@
-# Real-Time Chat Application
+# 💬 Real-Time Chat Application
 
-A simple full-stack real-time chat app built with:
-- **Frontend:** React.js (Vite), React Router, Axios, Socket.io-client
-- **Backend:** Express.js, Socket.io, MySQL, JWT authentication
-- **Auth:** JWT-based login/register with hashed passwords (bcrypt)
+A full-stack real-time chat application built with React, Express.js, Socket.IO, MySQL, and JWT authentication.
 
-The code is written in a simple, beginner-friendly style with comments
-explaining what each part does.
+🔗 **Live Demo:** https://bruh-17u.vercel.app/
+
+## ✨ Features
+
+- 🔐 User registration and login
+- 🔑 JWT-based authentication
+- 🔒 Password hashing with bcrypt
+- 💬 Real-time messaging with Socket.IO
+- 👥 Online users in chat rooms
+- 🏠 Create and join chat rooms
+- 💾 Persistent messages stored in MySQL
+- 🛡️ Protected API routes using JWT middleware
+- 📱 Responsive chat interface
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- Vite
+- React Router
+- Axios
+- Socket.IO Client
+
+### Backend
+
+- Node.js
+- Express.js
+- Socket.IO
+- MySQL
+- JWT
+- bcrypt
+
+### Deployment
+
+- Vercel — Frontend
+- Render — Backend
+- Aiven — MySQL Database
 
 ---
 
