@@ -8,6 +8,11 @@ const path = require("path");
 
 require("dotenv").config();
 
+// DB_CA_CERT holds a FILE PATH to the CA certificate, not the cert content.
+// Locally this falls back to backend/ca.pem; on Render it should be set to
+// /etc/secrets/ca.pem (the path of the mounted Secret File).
+const caCertPath = process.env.DB_CA_CERT || path.join(__dirname, "../ca.pem");
+
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -16,10 +21,7 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME,
 
     ssl: {
-        // In production, set DB_CA_CERT as an environment variable (paste the
-        // full ca.pem contents) so the certificate never has to be committed
-        // to git. Locally, it falls back to reading backend/ca.pem from disk.
-        ca: process.env.DB_CA_CERT || fs.readFileSync(path.join(__dirname, "../ca.pem")),
+        ca: fs.readFileSync(caCertPath),
         rejectUnauthorized: true
     },
 
