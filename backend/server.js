@@ -13,8 +13,27 @@ const initializeSocket = require("./socket/socketHandler");
 
 const app = express();
 
+// Only these origins are allowed to call the API in the browser.
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://real-time-chat-app-one-xi.vercel.app",
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow non-browser requests (no Origin header, e.g. curl/Postman) and
+    // requests from an allowed origin.
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 // Middleware
-app.use(cors()); // allow requests from our React frontend
+app.use(cors(corsOptions)); // allow requests from our React frontend
+app.options(/.*/, cors(corsOptions)); // handle preflight requests for all routes
 app.use(express.json()); // allow Express to read JSON from request body
 
 // REST API routes
@@ -32,7 +51,7 @@ const server = http.createServer(app);
 // Set up Socket.io on top of the HTTP server
 const io = new Server(server, {
   cors: {
-    origin: "*", // allow any frontend to connect (fine for learning projects)
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
   },
 });
