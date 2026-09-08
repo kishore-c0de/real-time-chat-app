@@ -17,6 +17,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://real-time-chat-app-one-xi.vercel.app",
+  "https://bruh-17u.vercel.app",
 ];
 
 const corsOptions = {
